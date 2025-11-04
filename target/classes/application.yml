@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: agent
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+#      chat:
+#        options:
+#          model: gpt-4o
+    mcp:
+      client:
+        streamable-http:
+          connections:
+            kagent-tools:
+              #url: https://kagent-tools.default.svc.cluster.local:8084/mcp
+              url: http://localhost:8084
+              endpoint: /mcp
+    chat:
+      client:
+        observations:
+          log-prompt: true
+          log-completion: true
